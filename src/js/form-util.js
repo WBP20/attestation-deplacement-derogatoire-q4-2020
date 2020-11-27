@@ -206,7 +206,7 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     
     BlobToDataURL(pdfBlob)
     //downloadBlob(pdfBlob, `attestation-${creationDate}_${creationHour}.pdf`)
-    showSnackbar(snackbar, 6000)
+    //showSnackbar(snackbar, 6000)
   })
 }
 
