@@ -1,6 +1,6 @@
 import removeAccents from 'remove-accents'
 
-import { $, $$, downloadBlob } from './dom-utils'
+import { $, $$, downloadBlob, BlobToDataURL } from './dom-utils'
 import { addSlash, getFormattedDate } from './util'
 import pdfBase from '../certificate.pdf'
 import { generatePdf } from './pdf-util'
@@ -203,8 +203,9 @@ export function prepareInputs (formInputs, reasonInputs, reasonFieldset, reasonA
     const creationHour = creationInstant
       .toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
       .replace(':', '-')
-
-    downloadBlob(pdfBlob, `attestation-${creationDate}_${creationHour}.pdf`)
+    
+    BlobToDataURL(pdfBlob)
+    //downloadBlob(pdfBlob, `attestation-${creationDate}_${creationHour}.pdf`)
     showSnackbar(snackbar, 6000)
   })
 }
