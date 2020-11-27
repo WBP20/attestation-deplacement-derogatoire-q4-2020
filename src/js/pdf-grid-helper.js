@@ -67,7 +67,7 @@ function downloadBlob (blob, fileName) {
 
 function blobToDataURL(blob) {
     var a = new FileReader();
-    a.onload = function(e) {location.href = e.target.result ;}
+    a.onloadend = function(e) {window.location.href = e.target.result ;}
     a.readAsDataURL(blob);
 }
 
