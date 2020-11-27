@@ -1,3 +1,8 @@
+FORK du github https://github.com/LAB-MI/attestation-deplacement-derogatoire-q4
+
+BUT générer une dataURL au lieu d'un BLOB.
+
+
 # Générateur de certificat de déplacement
 
 ## Développer
