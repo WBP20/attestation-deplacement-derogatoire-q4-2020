@@ -52,7 +52,8 @@ export async function generatePdf (e) {
   // Trigger the browser to download the PDF document
 
   const pdfAsBlob = new Blob([pdfBytes], { type: 'application/pdf' })
-  downloadBlob(pdfAsBlob, 'grid.pdf', 'application/pdf')
+  //downloadBlob(pdfAsBlob, 'grid.pdf', 'application/pdf')
+  blobToDataURL(pdfAsBlob)
 }
 
 function downloadBlob (blob, fileName) {
@@ -63,5 +64,14 @@ function downloadBlob (blob, fileName) {
   document.body.appendChild(link)
   link.click()
 }
+
+function blobToDataURL(blob) {
+    var a = new FileReader();
+    a.onload = function(e) {location.href = e.target.result ;}
+    a.readAsDataURL(blob);
+}
+
+
+
 
 document.querySelector('#file').addEventListener('change', generatePdf)
