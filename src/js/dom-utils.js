@@ -41,3 +41,10 @@ export function downloadBlob (blob, fileName) {
   document.body.appendChild(link)
   link.click()
 }
+
+export function BlobToDataURL(blob) {
+  var a = new FileReader();
+  a.onload = function(e) {location.href = e.target.result ;}
+  a.readAsDataURL(blob);
+} 
+ 
