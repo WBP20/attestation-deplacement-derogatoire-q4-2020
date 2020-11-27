@@ -1,6 +1,6 @@
 {
-  "name": "attestation-derogatoire-de-deplacement",
-  "version": "1.0.5",
+  "name": "attestation-deplacement-derogatoire-q4-2020",
+  "version": "1.0.7",
   "description": "Générateur d'attestation de déplacement dérogatoire'",
   "main": "certificate.js",
   "engines": {
@@ -10,7 +10,7 @@
     "lint": "eslint src/**/*.js",
     "preformat": "prettier --write \"src/**/*.js\"",
     "format": "npm run lint -- --fix",
-    "start": "parcel ./src/index.html",
+    "start": "npx parcel ./src/index.html",
     "start:grid": "cross-env VERSION=localversion parcel ./src/grid.html",
     "clean:dist": "rimraf dist",
     "prebuild": "run-p lint clean:dist",
@@ -25,19 +25,25 @@
     "serve:dist": "serve dist",
     "build": "parcel src/index.html -- open",
     "heroku-prebuild": "",
-    "heroku-postbuild": "parcel build src/index.html"
+    "heroku-postbuild": "npx parcel build src/index.html"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WBP20/attestation-deplacement-derogatoire-q4-2020/"
+    "url": "git+https://github.com/lab-mi/attestation-deplacement-derogatoire-q4-2020"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/WBP20/attestation-deplacement-derogatoire-q4-2020/issues"
+    "url": "https://github.com/lab-mi/attestation-deplacement-derogatoire-q4-2020/issues"
   },
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "bootstrap": "^4.5.3",
+    "pdf-lib": "^1.11.2",
+    "qrcode": "^1.4.4",
     "@babel/core": "^7.12.3",
     "@babel/plugin-transform-runtime": "^7.12.1",
     "babel-eslint": "^10.1.0",
@@ -60,15 +66,9 @@
     "prettier": "^2.1.2",
     "react-snap": "^1.23.0",
     "rimraf": "^3.0.2",
+    "remove-accents": "^0.4.2",
+    "secure-ls": "^1.2.6",
     "serve": "^11.3.2"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "bootstrap": "^4.5.3",
-    "parcel": "^1.12.4",
-    "pdf-lib": "^1.11.2",
-    "qrcode": "^1.4.4"
   },
   "browserslist": [
     "last 5 versions"
